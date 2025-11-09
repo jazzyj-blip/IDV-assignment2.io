@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IDV Assignment 3</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body { font-family: sans-serif; text-align: center; }
+    table { margin: auto; border-collapse: collapse; }
+    td { padding: 20px; border: 1px solid #ddd; }
+    svg { width: 300px; height: 200px; }
+  </style>
+</head>
+<body>
+  <h1>IDV Assignment 3 — Jasleena</h1>
+  
+  <table>
+    <tr>
+      <td><svg id="graphic1"></svg></td>
+      <td><svg id="graphic2"></svg></td>
+    </tr>
+    <tr>
+      <td><svg id="graphic3"></svg></td>
+      <td><svg id="graphic4"></svg></td>
+      <td><svg id="graphic5"></svg></td>
+    </tr>
+  </table>
+
+  <script>
+    // Example: D3.js structure
+    const svg1 = d3.select("#graphic1");
+
+    // 1️⃣ Create shapes
+    svg1.append("circle")
+      .attr("cx", 150)
+      .attr("cy", 100)
+      .attr("r", 30)
+      .attr("fill", "tomato");
+
+    // 2️⃣ Add interaction (e.g., on click)
+    svg1.on("click", function() {
+      // 3️⃣ Add transition when clicked
+      svg1.select("circle")
+        .transition()
+        .duration(1000)
+        .attr("r", 80)
+        .attr("fill", "steelblue");
+    });
+  </script>
+</body>
+</html>
